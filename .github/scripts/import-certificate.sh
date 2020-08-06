@@ -13,4 +13,4 @@ security import <(echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode) \
                 -P $SIGNING_CERTIFICATE_PASSWORD \
                 -T /usr/bin/codesign
 security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
-
+security find-identity -v -p codesigning
