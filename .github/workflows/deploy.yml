@@ -30,6 +30,7 @@ jobs:
         env:
           APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
           FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
           fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME"
           fastlane run build_app
