@@ -28,8 +28,7 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
-          FASTLANE_USER: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
+          FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
         run: |
           fastlane run latest_testflight_build_number
           fastlane run build_app
