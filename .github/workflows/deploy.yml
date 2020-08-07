@@ -28,10 +28,10 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
-          FASTLANE_USER: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
+          APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
           FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
         run: |
-          fastlane run latest_testflight_build_number
+          fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME"
           fastlane run build_app
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
