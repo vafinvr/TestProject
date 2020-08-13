@@ -32,6 +32,7 @@ jobs:
           FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
+          fastlane spaceauth -u "$APP_STORE_CONNECT_USERNAME"
           fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME" app_identifier:"com.krd.Sfera"
           fastlane run build_app
       - name: Upload build artifacts
