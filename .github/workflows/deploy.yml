@@ -32,6 +32,7 @@ jobs:
           FASTLANE_SESSIONS: ${{ secrets.FASTLANE_SESSION }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
+          sudo gem install fastlane
           mkdir -p ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME
           echo -n -e $FASTLANE_SESSIONS > ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME/cookie
           cat ~/.fastlane/spaceship/igorlushkin2020@gmail.com/cookie
