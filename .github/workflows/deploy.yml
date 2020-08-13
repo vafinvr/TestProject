@@ -33,6 +33,7 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
           fastlane spaceauth -u "$APP_STORE_CONNECT_USERNAME"
+          cat ~/.fastlane/spaceship/igorlushkin2020@gmail.com
           fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME" app_identifier:"com.krd.Sfera"
           fastlane run build_app
       - name: Upload build artifacts
