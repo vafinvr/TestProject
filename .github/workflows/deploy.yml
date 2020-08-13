@@ -29,11 +29,11 @@ jobs:
       - name: Build app
         env:
           APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+          FASTLANE_SESSIONS: ${{ secrets.FASTLANE_SESSION }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
           mkdir -p ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME
-          echo -n -e $FASTLANE_SESSION > ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME/cookie
+          echo -n -e $FASTLANE_SESSIONS > ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME/cookie
           cat ~/.fastlane/spaceship/igorlushkin2020@gmail.com/cookie
           fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME" app_identifier:"com.krd.Sfera"
           fastlane run build_app
