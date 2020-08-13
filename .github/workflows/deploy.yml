@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME
           echo $FASTLANE_SESSION >> ~/.fastlane/spaceship/$APP_STORE_CONNECT_USERNAME/cookie
-          cat ~/.fastlane/spaceship/igorlushkin2020@gmail.com
+          cat ~/.fastlane/spaceship/igorlushkin2020@gmail.com/cookie
           fastlane run latest_testflight_build_number username:"$APP_STORE_CONNECT_USERNAME" app_identifier:"com.krd.Sfera"
           fastlane run build_app
       - name: Upload build artifacts
