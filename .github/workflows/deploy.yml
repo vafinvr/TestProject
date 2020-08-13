@@ -29,7 +29,8 @@ jobs:
       - name: Build app
         env:
           APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          FASTLANE_SESSIONS: ${{ secrets.FASTLANE_SESSION }}
+          FASTLANE_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
+          FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         run: |
           sudo gem install fastlane
